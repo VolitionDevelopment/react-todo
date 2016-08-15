@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todo">
+<head>
+    <meta charset="UTF-8">
+    <title>React (Just Kidding)</title>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <style>
+        .completed{
+            text-decoration: line-through;
+            color: red;
+        }
+    </style>
+</head>
+<body ng-controller="todoCtrl">
+
+<div class="container" style="margin-top: 100px;">
+    <div class="jumbotron">
+        <h1>React Todo <small>(Kidding, this is Angular)</small></h1>
+
+        <hr>
+
+        <form class="form-inline text-center">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Todo" ng-model="title" ng-enter="addTodo()">
+            </div>
+            <hr>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <todo-item ng-repeat="todo in todos track by $index"></todo-item>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script src="node_modules/angular/angular.min.js"></script>
+<script src="js/todo.js"></script>
+</body>
+</html>
